@@ -22,6 +22,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'accept': 'text/event-stream',  
         'Cache-Control': 'no-cache',  
         'Proxy-Connection': 'keep-alive',  
+        'Authorization': f"Bearer {os.environ.get('FAKE_OPEN_KEY', '')}",  
     }  
   
     json_data = {  
